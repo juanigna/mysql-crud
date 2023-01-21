@@ -1,11 +1,13 @@
 import express from 'express';
 import { PORT } from './config.js';
 import employeesRouter from "./routes/employees.routes.js";
+import cors from 'cors';
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 
 // Setting port
 app.set('port', PORT);
